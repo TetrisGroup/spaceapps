@@ -49,6 +49,7 @@ public class App {
 		JLabel comboLbl = new JLabel("Fruits:");
 		JComboBox fruits = new JComboBox(fruitOptions);
 
+		
 		comboPanel.add(comboLbl);
 		comboPanel.add(fruits);
 
