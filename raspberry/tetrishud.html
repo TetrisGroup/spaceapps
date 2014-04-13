@@ -5,23 +5,74 @@
 	<link rel="stylesheet" type="text/css" href="tetrishud.css">
 	<script type="text/javascript" src="jquery.js"></script>
 
+	<script type="text/javascript">
 
+	function init(){
+		setInterval(queryProcedure, 1000);
+		setInterval(queryHeart, 1000);
+		setInterval(queryHeader, 15000);
+	}
+	
+	function showStatus(text) {
+		document.getElementById("sensortext").innerHTML = text;            
+	}
+	function showHeader(text) {
+		document.getElementById("headertext").innerHTML = text;            
+	}
+	function showHeart(text) {
+		document.getElementById("hearttext").innerHTML = text;            
+	}
+
+	function queryProcedure(){
+		$.ajax({"url":"/sensortext.html",
+	                "dataType":"html",
+	                "success":function(data) {
+	                	var html = $(data);
+				showStatus(data);
+		//		Concole.log(html);
+	                }
+		});
+	}
+	function queryHeader(){
+		$.ajax({"url":"/headertext.html",
+	                "dataType":"html",
+	                "success":function(data) {
+	                	var html = $(data);
+				showHeader(data);
+		//		Concole.log(html);
+	                }
+		});
+	}
+	function queryHeart(){
+		$.ajax({"url":"/heartbeat.html",
+	                "dataType":"html",
+	                "success":function(data) {
+	                	var html = $(data);
+				showHeart(data);
+		//		Concole.log(html);
+	                }
+		});
+	}
+
+
+	</script>
 
 
   </head>
-  <body>
+  <body onload="init()">
 	<div id="video_box">
     	<div id="video_overlays">
-        <img  height="768px" width="1024px" src="hudmock1.png"></img>
+        <img  height="768px" width="1024px" src="without-heart.png"></img>
 	</div>
-    	<div id="sensortext">
-		<p><bold>sens/tetris/galvanic 23</bold></p>
-		<p><bold>sens/tetris/galvanic 28</bold></p>
-		<p><bold>sens/tetris/galvanic 25</bold></p>
-		<p><blink><bold>sens/tetris/galvanic 21</blink></bold></p>
+    	<div id="sensortext" class="sensortext">
 	</div>
     	<div id="headertext">
-		<blink><h3>CHECKING UPLINK</h3></blink>
+		<h3>CHECKING UPLINK...</h3>
+	</div>
+    	<div id="heartdiv">
+        	<img  src="heart2.gif"></img>
+	</div>
+    	<div id="hearttext">
 	</div>
     	<div>
       		<img id="player" height="768px" width="1024px" src="/?action=stream" />

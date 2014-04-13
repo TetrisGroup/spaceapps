@@ -16,8 +16,8 @@ p.hudlog {
 #sensortext {
   position: absolute;
   left: 100;
-  top: 450;
-  width: 350px;
+  top: 480;
+  width: 300px;
   height: 300px;
   z-index: 200;
 
@@ -30,8 +30,26 @@ p.hudlog {
   width: 350px;
   height: 20px;
   z-index: 200;
+}
+#heartdiv {
+  position: absolute;
+  left: 730;
+  top: 665;
+  width: 200px;
+  height: 80px;
+  z-index: 200;
 
-  color: blue;
+  color: yellow;
+}
+#hearttext {
+  position: absolute;
+  left: 820;
+  top: 675;
+  width: 200px;
+  height: 80px;
+  z-index: 200;
+
+  color: yellow;
 }
 #player {
   position: absolute;
