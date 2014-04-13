@@ -9,4 +9,6 @@ We aim to design a suit, that monitors the astronaut's physical state and enviro
 
 The RaspberryPI will also be the uplink to mission ops to transmit astronaut's status as well as instructions and information to the astronaut to support his mission.
 
+for the videostreaming hud background we found this resource very helpful:
 
+http://blog.miguelgrinberg.com/post/how-to-build-and-run-mjpg-streamer-on-the-raspberry-pi

@@ -1,0 +1,43 @@
+#video_box {
+  position: relative;
+}
+#video_overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 768px;
+  z-index: 150;
+}
+p.hudlog {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size: 12px;
+}
+#sensortext {
+  position: absolute;
+  left: 100;
+  top: 450;
+  width: 350px;
+  height: 300px;
+  z-index: 200;
+
+  color: white;
+}
+#headertext {
+  position: absolute;
+  left: 355;
+  top: 13;
+  width: 350px;
+  height: 20px;
+  z-index: 200;
+
+  color: blue;
+}
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 768px;
+  z-index: 99;
+}
